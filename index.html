@@ -3,96 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Podcast</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 40px;
-        }
-
-        .content {
-            margin: 40px 0;
-            text-align: left;
-        }
-
-        .content h2 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-
-        .content p {
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .podcast-icon {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #999;
-            font-size: 0.9em;
-        }
-    </style>
+    <title>김혜리의 필름클럽</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="podcast-icon">🎙️</div>
-        <h1>Simple Podcast</h1>
-        <p class="subtitle">Your audio journey starts here</p>
+        <header>
+            <h1>김혜리의 필름클럽</h1>
+            <p class="subtitle">영화와 음악에 대한 이야기</p>
+        </header>
 
-        <div class="content">
-            <h2>Welcome!</h2>
-            <p>This is the home of Simple Podcast. Stay tuned for upcoming episodes, insights, and conversations.</p>
+        <main>
+            <div class="player-container">
+                <div class="now-playing">
+                    <img id="episode-image" src="https://image.cloud.sbs.co.kr/2024/06/05/Yqc1717550363234.jpg" alt="Episode artwork">
+                    <div class="episode-info">
+                        <h2 id="episode-title">에피소드를 선택하세요</h2>
+                        <p id="episode-description"></p>
+                    </div>
+                </div>
 
-            <h2>Coming Soon</h2>
-            <p>We're preparing exciting content for you. Check back soon for our latest episodes and updates.</p>
-        </div>
+                <div class="audio-controls">
+                    <audio id="audio-player" controls>
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
-        <footer>
-            <p>Simple Podcast &copy; 2025</p>
-        </footer>
+            <div class="episodes-list">
+                <h3>Episodes</h3>
+                <div id="episodes-container"></div>
+            </div>
+        </main>
     </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
